@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
     <title>@ViewData["Title"] - Test</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -10,14 +11,17 @@
 </head>
 <body>
 
-    <div class="container">
+    <div id="app" class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>
+        function test() {
+            window.location.href="/test";
+        }
+    </script>
 </body>
 </html>

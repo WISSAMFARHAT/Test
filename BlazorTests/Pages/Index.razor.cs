@@ -18,10 +18,21 @@ namespace BlazorTests.Pages
 {
     public partial class Index
     {
-        public void Next()
+        public string Name { get; set; } = "Next";
+        public int Count { get; set; } = 0;
+        private async Task Next()
         {
-            Console.WriteLine("w");
-            NM.NavigateTo("/test");
+            //NM.NavigateTo("/test");
+            Count++;
+            Name = "back";
+            this.StateHasChanged();
+
+            return;
+        }
+
+        private async Task Test()
+        {
+            await JR.InvokeVoidAsync("test");
         }
     }
 }

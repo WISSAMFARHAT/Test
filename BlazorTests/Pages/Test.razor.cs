@@ -20,7 +20,7 @@ namespace BlazorTests.Pages
     {
         public void Back()
         {
-            NM.NavigateTo("/test");
+            NM.NavigateTo("/");
         }
     }
 }
