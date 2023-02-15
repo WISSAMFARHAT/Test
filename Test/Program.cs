@@ -18,16 +18,17 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseBlazorFrameworkFiles();
 app.UseRouting();
 
 app.UseEndpoints(endpoints =>
- {
-     endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
+{
+    endpoints.MapControllerRoute(
+       name: "default",
+       pattern: "{controller=Home}/{action=Index}/{id?}");
 
-     endpoints.MapBlazorHub();
- });
+    endpoints.MapBlazorHub();
+});
+
 
 app.Run();

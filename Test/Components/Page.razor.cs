@@ -4,19 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using System.Net.Http;
-using System.Net.Http.Json;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Components.Web;
-using Microsoft.AspNetCore.Components.Web.Virtualization;
-using Microsoft.AspNetCore.Components.WebAssembly.Http;
 using Microsoft.JSInterop;
-using BlazorTests;
-using BlazorTests.Shared;
+using System.IO;
 
-namespace BlazorTests.Pages
+namespace Test.Components
 {
-    public partial class Index
+    public partial class Page
     {
         public string Name { get; set; } = "Next";
         public int Count { get; set; } = 0;
@@ -26,14 +24,12 @@ namespace BlazorTests.Pages
             Count++;
             Name = "back";
             this.StateHasChanged();
-
             return;
         }
 
-        private async Task Test()
+        private async Task Test1()
         {
-            await JR.InvokeVoidAsync("test");
+            await JR.InvokeVoidAsync("test1");
         }
-      
     }
 }
